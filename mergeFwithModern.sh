@@ -5,4 +5,4 @@ d=0;counter=0; for (i=1;i<=length(sites);i++){
         d+=meth[sites[i]]; counter++ }else {print sites[i] > "/dev/stderr"}} ;
 print $4, $14, d/counter}' MODERN_METHYLATION.data deammeth_res/20.F > to_plot.txt
 
-Rscript -e 'df=read.table("to_plot.txt");df=subset(df,V1>312500);pdf("result.pdf");plot(df[,1], df[,2]); lines(df[,1],df[,3],type="l", col="red");dev.off()' 
+Rscript -e 'df=read.table("to_plot.txt");df=subset(df,V1>312500);pdf("result.pdf");plot(df[,1], df[,2],xlab="Genomic region (chr20;GRCh38)",ylab="Methylation levels",ylim=c(0,1)); lines(df[,1],df[,3],type="l", col="red");dev.off()' 
