@@ -17,7 +17,7 @@ EXCLUDE=EXCLUDE.CpGs.txt
 # N cpgs to include per window for estimating $f$
 NCPG=50
 # PREFIX
-OUT=deammeth_res/${CHROM}
+OUT=dammet_res/${CHROM}
 # Using precalculated Deamination rates as the provided bam only covers a window of 30kb bp.
 PRECALCDEAM=test.deamrates
 mkdir -p $(dirname ${OUT})
