@@ -21,6 +21,6 @@ OUT=deammeth_res/${CHROM}
 # Using precalculated Deamination rates as the provided bam only covers a window of 30kb bp.
 PRECALCDEAM=test.deamrates
 mkdir -p $(dirname ${OUT})
-deammeth/deammeth -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM}
+DamMet/DamMet -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM}
 
 bash mergeFwithModern.sh
