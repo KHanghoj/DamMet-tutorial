@@ -20,8 +20,11 @@ NCPG=50
 OUT=dammet_res
 # Using precalculated Deamination rates as the provided bam only covers a window of 30kb bp.
 PRECALCDEAM=test.deamrates
-mkdir -p $(dirname ${OUT})
-../DamMet estDEAM -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM} -skip
-../DamMet estF -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM} -skip
+# No need to run estDEAM as we have estimated the deaminations rates in this tutorial already. Below is the command to estimate them from the data if needed.
 
+# ../DamMet/DamMet estDEAM -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -E ${EXCLUDE} -skip -verbose
+
+../DamMet/DamMet estF -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM} -skip -verbose
+
+# plot results against methylation levels from a modern sample.
 bash mergeFwithModern.sh
