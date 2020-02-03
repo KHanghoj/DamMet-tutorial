@@ -24,7 +24,7 @@ PRECALCDEAM=test.deamrates
 
 # ../DamMet/DamMet estDEAM -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -E ${EXCLUDE} -skip -verbose
 
-../DamMet/DamMet estF -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM} -skip -verbose
+../DamMet/DamMet estF -b ${BAM} -r ${FASTA} -c ${CHROM} -q ${minMapQ} -Q ${minBaseQ} -P ${MAX_POS} -M ${M} -O ${OUT} -N ${NCPG} -E ${EXCLUDE} -D ${PRECALCDEAM} -verbose -skip_empty_cpg
 
 # plot results against methylation levels from a modern sample.
 bash mergeFwithModern.sh
